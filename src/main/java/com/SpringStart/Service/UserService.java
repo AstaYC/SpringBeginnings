@@ -11,6 +11,16 @@ public class UserService {
         this.user = user;
     }
 
+    // Default no-argument constructor
+    public UserService() {
+    }
+
+    // Setter Injection
+    public void setUser(User user) {
+        this.user = user;
+        System.out.println("Setter Injection: User set.");
+    }
+
     public void addUser() {
             System.out.println("User added: " + user.getNom() + " " + user.getDateExpiration());
     }

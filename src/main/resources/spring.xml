@@ -31,6 +31,20 @@
               <constructor-arg ref="singletonUser" /> <!-- Injects the singleton user bean -->
        </bean>
 
-
+       <!-- Define UserService Bean using Setter Injection -->
+       <bean id="userServiceSetter" class="com.SpringStart.Service.UserService">
+              <!-- Setter injection of Utilisateur -->
+              <property name="user">
+                     <bean class="com.SpringStart.Model.User">
+                            <constructor-arg name="id" value="2" />
+                            <constructor-arg name="nom" value="Setter" />
+                            <constructor-arg name="prenom" value="Injection" />
+                            <constructor-arg name="pieceIdentification" value="Passport" />
+                            <constructor-arg name="nationalite" value="French" />
+                            <constructor-arg name="dateInscription" value="2024-10-23"/>
+                            <constructor-arg name="dateExpiration" value="2025-10-24"/>
+                     </bean>
+              </property>
+       </bean>
 
 </beans>
