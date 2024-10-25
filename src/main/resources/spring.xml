@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+       <!-- Singleton scope (only one instance for the entire application) -->
+       <bean id="singletonUser" class="com.SpringStart.Model.User" scope="singleton">
+              <property name="id" value="1" />
+              <property name="nom" value="Doe" />
+              <property name="prenom" value="John" />
+              <property name="pieceIdentification" value="Passport" />
+              <property name="nationalite" value="American" />
+              <property name="dateInscription" value="2024-10-23" />
+              <property name="dateExpiration" value="2025-10-23" />
+       </bean>
+
+       <!-- Prototype scope (new instance on each request) -->
+       <bean id="prototypeUser" class="com.SpringStart.Model.User" scope="prototype">
+              <property name="id" value="2" />
+              <property name="nom" value="Smith" />
+              <property name="prenom" value="Jane" />
+              <property name="pieceIdentification" value="ID Card" />
+              <property name="nationalite" value="Canadian" />
+              <property name="dateInscription" value="2024-10-23" />
+              <property name="dateExpiration" value="2025-10-23" />
+       </bean>
+
+       <bean id="userService" class="com.SpringStart.Service.UserService">
+              <constructor-arg ref="singletonUser" /> <!-- Injects the singleton user bean -->
+       </bean>
+
+
+
+</beans>
