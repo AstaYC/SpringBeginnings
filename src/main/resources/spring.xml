@@ -47,4 +47,22 @@
               </property>
        </bean>
 
+       <!-- Define UserService Bean for Interface Injection -->
+       <bean id="userServiceInterface" class="com.SpringStart.Service.UserService">
+              <!-- Inject Utilisateur via setter (for interface) -->
+              <property name="user">
+                     <bean class="com.SpringStart.Model.User">
+                            <constructor-arg name="id" value="5" />
+                            <constructor-arg name="nom" value="Interface" />
+                            <constructor-arg name="prenom" value="Injection" />
+                            <constructor-arg name="pieceIdentification" value="National ID" />
+                            <constructor-arg name="nationalite" value="German" />
+                            <constructor-arg name="dateInscription" value="2024-10-23"/>
+                            <constructor-arg name="dateExpiration" value="2025-10-24"/>
+
+                     </bean>
+              </property>
+       </bean>
+
+
 </beans>
